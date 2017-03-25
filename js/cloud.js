@@ -1,0 +1,41 @@
+$(function(){
+	$(".c4").hover(function(){
+		$(".xiala4").show();
+	},function(){
+		$(".xiala4").hide();
+	});
+	$(".c5").hover(function(){
+		$(".xiala5").show();
+	},function(){
+		$(".xiala5").hide();
+	});
+	$(".c1").hover(function(){
+		$(".xiala1").show();
+	},function(){
+		$(".xiala1").hide();
+	});
+	$("#zc").click(function(){
+		$("#yz").show();
+	});
+	$(".bottom").click(function(){
+		$("#yz").show();
+	});
+	$(".close").click(function(){
+		$("#yz").hide();
+	});
+	$(".y4").click(function(){
+		Log();
+	});
+})
+function Log(){
+	var username=$.trim($("#userName").val());
+	var pwd=$.trim($("#userPwd").val());
+	if(username==""||pwd==""){
+		layer.alert("用户名不能为空",{
+			title:"提示",
+			icon:5
+		});
+	}else{
+		$.post("sjcddx.ashx",{"username":username,"pwd":pwd},function(data){});
+	}
+}
